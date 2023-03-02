@@ -1,0 +1,55 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+:root {
+  --cell-size: 200px;
+  --mark-size: calc(var(--cell-size) * 0.9);
+}
+
+body {
+  margin: 0px;
+}
+
+.game-board {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(3, auto);
+}
+
+.square {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--cell-size);
+  height: var(--cell-size);
+  font-size: var(--mark-size);
+  border: solid 1px;
+  border-color: black;
+}
+
+.square.X,
+.square.O {
+  cursor: not-allowed;
+}
+
+.square:nth-child(n + 1) {
+  border-top: none;
+}
+
+.square:nth-child(n + 7) {
+  border-bottom: none;
+}
+
+.square:nth-child(3n + 1) {
+  border-left: none;
+}
+
+.square:nth-child(3n) {
+  border-right: none;
+}
