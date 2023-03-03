@@ -43,6 +43,8 @@ humanPlay.addEventListener("click", () => {
   initScreen.classList.add("hidden");
 });
 
+aiPlay.addEventListener("click", () => {});
+
 function playerTurn() {
   square.forEach((boxSquare) => {
     boxSquare.addEventListener(
