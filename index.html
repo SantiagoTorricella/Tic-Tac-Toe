@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="game-board">
+    <h1>TIC TAE TOE</h1>
+    <div class="game-board hidden" id="gameBoard">
       <div class="square"></div>
       <div class="square"></div>
       <div class="square"></div>
@@ -20,9 +21,17 @@
       <div class="square"></div>
       <div class="square"></div>
     </div>
-    <div class="winning-message" id="winningMessage">
+    <div class="init-page" id="initPage">
+      <p>Play versus</p>
+      <div class="buttons-init">
+        <button id="aiPlay">AI 🤖</button>
+        <button id="humanPlay">HUMAN 🧑</button>
+      </div>
+    </div>
+    <div class="winning-message hidden" id="winningScreen">
       <div data-winning-message></div>
       <button id="restartButton">Restart</button>
+      <button id="mainMenuButton">Main Menu</button>
     </div>
   </body>
 </html>

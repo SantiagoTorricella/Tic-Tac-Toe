@@ -1,6 +1,12 @@
 // Nodes References //
 const square = document.querySelectorAll(".square");
 const winningText = document.querySelector("[data-winning-message]");
+const gameBoardNode = document.getElementById("gameBoard");
+const winningScreen = document.getElementById("winningScreen");
+const humanPlay = document.getElementById("humanPlay");
+const aiPlay = document.getElementById("aiPlay");
+const initScreen = document.getElementById("initPage");
+
 // Variables //
 let turn = 1;
 let currentMark;
@@ -17,11 +23,6 @@ let winningMatches = [
 
 // Factory Functions and Modules //
 
-const gameBoard = (() => {
-  let gameboard = Array.from(square);
-  return { gameboard };
-})();
-
 const playerFactory = (name, mark) => {
   return { name, mark };
 };
@@ -37,7 +38,10 @@ const player2 = playerFactory("player2", "O");
 
 // Creating Functions //
 
-playerTurn();
+humanPlay.addEventListener("click", () => {
+  gameBoardNode.classList.remove("hidden");
+  initScreen.classList.add("hidden");
+});
 
 function playerTurn() {
   square.forEach((boxSquare) => {
@@ -82,8 +86,10 @@ function isDraw() {
 function endGame(draw) {
   if (draw) {
     winningText.innerText = "Draw!";
+    winningScreen.classList.remove("hidden");
   } else {
     winningText.innerText = `${currentMark}` + "'s is the winner";
+    winningScreen.classList.remove("hidden");
   }
 }
 
@@ -94,3 +100,5 @@ function checkWin(currentMark) {
     });
   });
 }
+
+playerTurn();

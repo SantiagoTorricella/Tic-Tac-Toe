@@ -6,10 +6,25 @@
 :root {
   --cell-size: 200px;
   --mark-size: calc(var(--cell-size) * 0.9);
+  --title-center: 50px;
+  --buttons-size: calc(var(--title-center) * 0.5);
 }
 
 body {
   margin: 0px;
+}
+
+h1 {
+  font-size: var(--title-center);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1em;
+  padding: 2em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: rgb(14, 107, 107);
+  color: beige;
 }
 
 .game-board {
@@ -19,6 +34,8 @@ body {
   justify-content: center;
   align-content: center;
   grid-template-columns: repeat(3, auto);
+  background-color: lightgray;
+  margin-top: 0px;
 }
 
 .square {
@@ -52,4 +69,36 @@ body {
 
 .square:nth-child(3n) {
   border-right: none;
+}
+
+.init-page {
+  display: flex;
+  height: 50vh;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.init-page p {
+  color: black;
+  font-size: var(--title-center);
+}
+
+.init-page button {
+  cursor: pointer;
+  border: none;
+  margin: 0em 2em;
+  font-size: var(--buttons-size);
+  padding: 1em;
+  transition-duration: 2s;
+}
+
+.init-page button:hover {
+  transform: scale(1.2);
+  transition-duration: 2s;
+}
+
+.hidden {
+  display: none;
 }
