@@ -73,11 +73,12 @@ h1 {
 
 .init-page {
   display: flex;
-  height: 50vh;
+  height: 100vh;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
   align-items: center;
+  background-color: lightgray;
 }
 
 .init-page p {
